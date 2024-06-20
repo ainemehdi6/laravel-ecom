@@ -16,8 +16,6 @@
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
-            <li class="header">HOME</li>
-            <li><a href="{{ route('admin.dashboard') }}"> <i class="fa fa-home"></i> Home</a></li>
             <li class="header">SELL</li>
             <li class="treeview @if(request()->segment(2) == 'products' || request()->segment(2) == 'attributes' || request()->segment(2) == 'brands') active @endif">
                 <a href="#">
@@ -29,30 +27,6 @@
                 <ul class="treeview-menu">
                     @if($user->hasPermission('view-product'))<li><a href="{{ route('admin.products.index') }}"><i class="fa fa-circle-o"></i> List products</a></li>@endif
                     @if($user->hasPermission('create-product'))<li><a href="{{ route('admin.products.create') }}"><i class="fa fa-plus"></i> Create product</a></li>@endif
-                    <li class="@if(request()->segment(2) == 'attributes') active @endif">
-                    <a href="#">
-                        <i class="fa fa-gear"></i> <span>Attributes</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ route('admin.attributes.index') }}"><i class="fa fa-circle-o"></i> List attributes</a></li>
-                        <li><a href="{{ route('admin.attributes.create') }}"><i class="fa fa-plus"></i> Create attribute</a></li>
-                    </ul>
-                    </li>
-                    <li class="@if(request()->segment(2) == 'brands') active @endif">
-                    <a href="#">
-                        <i class="fa fa-tag"></i> <span>Brands</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{ route('admin.brands.index') }}"><i class="fa fa-circle-o"></i> List brands</a></li>
-                        <li><a href="{{ route('admin.brands.create') }}"><i class="fa fa-plus"></i> Create brand</a></li>
-                    </ul>
-                    </li>
                 </ul>
             </li>
             <li class="treeview @if(request()->segment(2) == 'categories') active @endif">
@@ -77,17 +51,6 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ route('admin.customers.index') }}"><i class="fa fa-circle-o"></i> List customers</a></li>
                     <li><a href="{{ route('admin.customers.create') }}"><i class="fa fa-plus"></i> Create customer</a></li>
-                    <li class="@if(request()->segment(2) == 'addresses') active @endif">
-                        <a href="#"><i class="fa fa-map-marker"></i> Addresses
-                            <span class="pull-right-container">
-                              <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="{{ route('admin.addresses.index') }}"><i class="fa fa-circle-o"></i> List addresses</a></li>
-                            <li><a href="{{ route('admin.addresses.create') }}"><i class="fa fa-plus"></i> Create address</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </li>
             <li class="header">ORDERS</li>
@@ -100,31 +63,6 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ route('admin.orders.index') }}"><i class="fa fa-circle-o"></i> List orders</a></li>
-                </ul>
-            </li>
-            <li class="treeview @if(request()->segment(2) == 'order-statuses') active @endif">
-                <a href="#">
-                    <i class="fa fa-anchor"></i> <span>Order Statuses</span>
-                    <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.order-statuses.index') }}"><i class="fa fa-circle-o"></i> List order statuses</a></li>
-                    <li><a href="{{ route('admin.order-statuses.create') }}"><i class="fa fa-plus"></i> Create order status</a></li>
-                </ul>
-            </li>
-            <li class="header">DELIVERY</li>
-            <li class="treeview @if(request()->segment(2) == 'couriers') active @endif">
-                <a href="#">
-                    <i class="fa fa-truck"></i> <span>Couriers</span>
-                    <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.couriers.index') }}"><i class="fa fa-circle-o"></i> List couriers</a></li>
-                    <li><a href="{{ route('admin.couriers.create') }}"><i class="fa fa-plus"></i> Create courier</a></li>
                 </ul>
             </li>
             <li class="header">CONFIG</li>
@@ -164,17 +102,6 @@
             </ul>
         </li>
             @endif
-            <li class="treeview @if(request()->segment(2) == 'countries' || request()->segment(2) == 'provinces') active @endif">
-                <a href="#">
-                    <i class="fa fa-flag"></i> <span>Countries</span>
-                    <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.countries.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
-                </ul>
-            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
