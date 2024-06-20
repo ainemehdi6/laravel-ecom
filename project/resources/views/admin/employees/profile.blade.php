@@ -42,7 +42,7 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <div class="btn-group">
-                        <a href="{{ route('admin.dashboard') }}" class="btn btn-default btn-sm">Back</a>
+                        <a href="{{ route('admin.products.index') }}" class="btn btn-default btn-sm">Back</a>
                         <button class="btn btn-success btn-sm" type="submit"> <i class="fa fa-save"></i> Save</button>
                     </div>
                 </div>
