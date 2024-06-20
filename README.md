@@ -19,3 +19,5 @@ Features Provided
 - While inside the container, compile the assets with `npm i && npm run dev`
 - While inside the container, link the images `php artisan storage:link`
 - OPEN [http://localhost:8000](http://localhost:8000)
+
+## El AINE El mehdi, SAADI Nino, THOMAS Robin
